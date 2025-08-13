@@ -1,0 +1,68 @@
+<!--
+/******************************************************************************
+* INTEL CONFIDENTIAL
+* Copyright 2017-2025 Intel Corporation.
+* This software and the related documents are Intel copyrighted materials, and your use of
+* them is governed by the express license under which they were provided to you ("License").
+* Unless the License provides otherwise, you may not use, modify, copy, publish, distribute,
+* disclose or transmit this software or the related documents without Intel's prior
+* written permission. This software and the related documents are provided as is, with no
+* express or implied warranties, other than those that are expressly stated in the License.
+*
+*-NDA Required
+*****************************************************************************/
+-->
+
+<!-- <ExpectedValue>OK</ExpectedValue> -->
+
+<IntelligentMemoryChecker>
+
+	<IMC_configuration>
+		<flow>data_harasser</flow>
+		<flow>burster_flow</flow>
+		<iterations>1</iterations>
+		<continue_on_fail>false</continue_on_fail>
+	</IMC_configuration>
+
+	<!--Flows configuration-->
+
+	<burster_flow>
+		<flow_type>BURSTER</flow_type>
+		<iterations>50</iterations>
+		<data_algorithm>walking_data</data_algorithm>
+		<address_algorithm>increment_address</address_algorithm>
+		<opcode>LEGACY</opcode>
+		<data_bursts>2</data_bursts>
+		<same_address>false</same_address>
+		<memory_block>memory_block_1</memory_block>
+	</burster_flow>
+
+	<data_harasser>
+		<flow_type>DATA_HARASSER</flow_type>
+		<iterations>1</iterations>
+		<algorithm>init_algorithm</algorithm>
+		<opcode>LEGACY</opcode>
+		<memory_block>memory_block_1</memory_block>
+	</data_harasser>
+
+	<!--Algorithms configuration-->
+
+	<init_algorithm>
+		<algorithm_type>CONSTANT</algorithm_type>
+	</init_algorithm>
+
+	<increment_address>
+		<algorithm_type>INCREMENT</algorithm_type>
+		<incrementor>128</incrementor>
+	</increment_address>
+
+	<walking_data>
+		<algorithm_type>WALKING_ONE</algorithm_type>
+	</walking_data>
+
+	<memory_block_1>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_1>
+
+</IntelligentMemoryChecker>

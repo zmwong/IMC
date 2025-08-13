@@ -1,0 +1,57 @@
+<!--
+/******************************************************************************
+* INTEL CONFIDENTIAL
+* Copyright 2017-2023 Intel Corporation.
+* This software and the related documents are Intel copyrighted materials, and your use of
+* them is governed by the express license under which they were provided to you ("License").
+* Unless the License provides otherwise, you may not use, modify, copy, publish, distribute,
+* disclose or transmit this software or the related documents without Intel's prior
+* written permission. This software and the related documents are provided as is, with no
+* express or implied warranties, other than those that are expressly stated in the License.
+*
+*-NDA Required
+*****************************************************************************/
+-->
+
+<!-- <ExpectedValue>OK</ExpectedValue> -->
+
+<IntelligentMemoryChecker>
+
+	<!--IMC flows queue configuration-->
+
+	<IMC_configuration>
+		<flow>burster_flow_1</flow>
+		<time_to_execute>10</time_to_execute>
+		<time_unit>minutes</time_unit>
+	</IMC_configuration>
+
+	<!--Flows configuration-->
+
+	<burster_flow_1>
+		<flow_type>BURSTER</flow_type>
+		<iterations>10</iterations>
+		<data_bursts>16</data_bursts>
+		<address_algorithm>fast_random_address_algorithm_burst_1</address_algorithm>
+		<data_algorithm>byte_add_data_algorithm_burst_1</data_algorithm>
+		<opcode>AVX512_VMOVDQU</opcode>
+		<execute_iterations>1</execute_iterations>
+		<same_address>false</same_address>
+	</burster_flow_1>
+
+	<!--Algorithms configuration-->
+
+	<byte_add_data_algorithm_burst_1>
+		<algorithm_type>BYTE_ADD</algorithm_type>
+	</byte_add_data_algorithm_burst_1>
+
+	<fast_random_address_algorithm_burst_1>
+		<algorithm_type>FAST_RANDOM</algorithm_type>
+		<pattern_count>10000000000</pattern_count>
+	</fast_random_address_algorithm_burst_1>
+
+<!--
+	No memory blocks configuration due to this file meant to be used by Runner
+-->
+
+</IntelligentMemoryChecker>
+

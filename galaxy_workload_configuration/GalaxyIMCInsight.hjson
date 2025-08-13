@@ -1,0 +1,16 @@
+[
+    {
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        Insight: {
+            IP: Memory
+            Type: Value
+            254: Intelligent Memory Checker configuration or internal error
+            244: Intelligent Memory Checker found no failures but the OS or error provider found a failure
+            243: One or more Intelligent Memory Checker instances failed unexpectedly, and the OS has detected one or more uncorrectable HW errors
+            242: One or more Intelligent Memory Checker instances detected one or more memory check miscompares, and the OS has detected one or more correctable or uncorrectable HW errors
+            241: One or more IMC tool instances detected one or more memory check miscompares
+            235: There is a combination of HW errorstatus that cannot be reconciled with an IMC tool instance status (i.e., only correctable errors detected, and there was a tool SIGBUS indication or crash)
+        }
+    }
+]

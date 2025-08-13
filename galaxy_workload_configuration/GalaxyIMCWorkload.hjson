@@ -1,0 +1,2529 @@
+# Intelligent Memory Checker HJSON configuration file
+[
+
+    # Basic help execution
+    {
+        AppName: IntelligentMemoryChecker_Help
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "--help",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+            ]
+            weights: [
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Custom test
+    {
+        AppName: IntelligentMemoryChecker_CUSTOM_TEST
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\custom_test_AVX512.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 1 with LEGACY Opcode and using binary with AVX_512 disabled
+    {
+        AppName: IntelligentMemoryChecker_1_LEGACY_AVX512_DISABLED
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+                "-e",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\legacy\\1_LEGACY.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "C:\\Galaxy\\IMC_Tool\\IntelligentMemoryChecker_tool-1.4-avx512-disabled.exe",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+        # Test 0 with LEGACY Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_LFSR_LEGACY
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\legacy\\Seq_LFSR_LEGACY.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+
+    # Test 1 with LEGACY Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Wedge_LEGACY
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\legacy\\Seq_Wedge_LEGACY.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 2 with LEGACY Opcode
+    {
+        AppName: IntelligentMemoryChecker_Random_Duo_LEGACY
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\legacy\\Random_Duo_LEGACY.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 3 with LEGACY Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Precise_LEGACY
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\legacy\\Seq_Precise_LEGACY.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 4 with LEGACY Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Walking_One_LEGACY
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\legacy\\Seq_Walking_One_LEGACY.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 5 with LEGACY Opcode
+    {
+        AppName: IntelligentMemoryChecker_LFSR_Data_Harasser_LEGACY
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\legacy\\LFSR_Data_Harasser_LEGACY.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 6 with LEGACY Opcode
+    {
+        AppName: IntelligentMemoryChecker_Stuck_At_LEGACY
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\legacy\\Stuck_At_LEGACY.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 7 with LEGACY Opcode
+    {
+        AppName: IntelligentMemoryChecker_7_LEGACY
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\legacy\\7_LEGACY.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 8 with SSE_MOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_LFSR_SSE_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqu\\Seq_LFSR_SSE_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 9 with SSE_MOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Wedge_SSE_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqu\\Seq_Wedge_SSE_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 10 with SSE_MOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Random_Duo_SSE_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqu\\Random_Duo_SSE_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 11 with SSE_MOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Precise_SSE_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqu\\Seq_Precise_SSE_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 12 with SSE_MOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Walking_One_SSE_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqu\\Seq_Walking_One_SSE_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 13 with SSE_MOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_LFSR_Data_Harasser_SSE_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqu\\LFSR_Data_Harasser_SSE_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 14 with SSE_MOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Stuck_At_SSE_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqu\\Stuck_At_SSE_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+
+    # Test 1 with SSE_MOVDQA Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_LFSR_SSE_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqa\\Seq_LFSR_SSE_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 2 with SSE_MOVDQA Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Wedge_SSE_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqa\\Seq_Wedge_SSE_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 3 with SSE_MOVDQA Opcode
+    {
+        AppName: IntelligentMemoryChecker_Random_Duo_SSE_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqa\\Random_Duo_SSE_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 4 with SSE_MOVDQA Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Precise_SSE_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqa\\Seq_Precise_SSE_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 5 with SSE_MOVDQA Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Walking_One_SSE_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqa\\Seq_Walking_One_SSE_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 6 with SSE_MOVDQA Opcode
+    {
+        AppName: IntelligentMemoryChecker_LFSR_Data_Harasser_SSE_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqa\\LFSR_Data_Harasser_SSE_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 7 with SSE_MOVDQA Opcode
+    {
+        AppName: IntelligentMemoryChecker_Stuck_At_SSE_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqa\\Stuck_At_SSE_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 8 with SSE_MOVDQA Opcode
+    {
+        AppName: IntelligentMemoryChecker_8_SSE_MOVDQA
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\sse_movdqa\\8_SSE_MOVDQA.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    
+    # Test 0 with AVX_VMOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_LFSR_AVX_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx\\avx_vmovdqu\\Seq_LFSR_AVX_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+
+    # Test 1 with AVX_VMOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Wedge_AVX_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx\\avx_vmovdqu\\Seq_Wedge_AVX_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 2 with AVX_VMOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Random_Duo_AVX_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx\\avx_vmovdqu\\Random_Duo_AVX_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 3 with AVX_VMOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Precise_AVX_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx\\avx_vmovdqu\\Seq_Precise_AVX_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 4 with AVX_VMOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Walking_One_AVX_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx\\avx_vmovdqu\\Seq_Walking_One_AVX_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 5 with AVX_VMOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_LFSR_Data_Harasser_AVX_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx\\avx_vmovdqu\\LFSR_Data_Harasser_AVX_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 6 with AVX_VMOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Stuck_At_AVX_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx\\avx_vmovdqu\\Stuck_At_AVX_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 7 with AVX_VMOVNTDQ Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_LFSR_AVX_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx\\avx_vmovntdq\\Seq_LFSR_AVX_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 8 with AVX_VMOVNTDQ Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Wedge_AVX_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx\\avx_vmovntdq\\Seq_Wedge_AVX_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 9 with AVX_VMOVNTDQ Opcode
+    {
+        AppName: IntelligentMemoryChecker_Random_Duo_AVX_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx\\avx_vmovntdq\\Random_Duo_AVX_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 10 with AVX_VMOVNTDQ Opcode
+    {
+        AppName: IntelligentMemoryChecker_10_Seq_Precise_AVX_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx\\avx_vmovntdq\\Seq_Precise_AVX_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 11 with AVX_VMOVNTDQ Opcode
+    {
+        AppName: IntelligentMemoryChecker_11_Seq_Walking_One_AVX_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx\\avx_vmovntdq\\Seq_Walking_One_AVX_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 12 with AVX_VMOVNTDQ Opcode
+    {
+        AppName: IntelligentMemoryChecker_LFSR_Data_Harasser_AVX_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx\\avx_vmovntdq\\LFSR_Data_Harasser_AVX_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 13 with AVX_VMOVNTDQ Opcode
+    {
+        AppName: IntelligentMemoryChecker_Stuck_At_AVX_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx\\avx_vmovntdq\\Stuck_At_AVX_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 0 with AVX512_VMOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_0_AVX512_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx512\\avx512_vmovdqu\\Seq_LFSR_AVX512_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 1 with AVX512_VMOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Wedge_AVX512_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx512\\avx512_vmovdqu\\1_AVX512_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 2 with AVX512_VMOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Random_Duo_AVX512_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx512\\avx512_vmovdqu\\2_AVX512_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 3 with AVX512_VMOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Precise_AVX512_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx512\\avx512_vmovdqu\\Seq_Precise_AVX512_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 4 with AVX512_VMOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Walking_One_AVX512_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx512\\avx512_vmovdqu\\Seq_Walking_One_AVX512_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 5 with AVX512_VMOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_LFSR_Data_Harasser_AVX512_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx512\\avx512_vmovdqu\\LFSR_Data_Harasser_AVX512_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 6 with AVX512_VMOVDQU Opcode
+    {
+        AppName: IntelligentMemoryChecker_Stuck_At_AVX512_VMOVDQU
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx512\\avx512_vmovdqu\\Stuck_At_AVX512_VMOVDQU.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+
+    # Test 7 with AVX512_VMOVNTDQ Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_LFSR_AVX512_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx512\\avx512_vmovntdq\\Seq_LFSR_AVX512_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 8 with AVX512_VMOVNTDQ Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Wedge_AVX512_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx512\\avx512_vmovntdq\\Seq_Wedge_AVX512_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 9 with AVX512_VMOVNTDQ Opcode
+    {
+        AppName: IntelligentMemoryChecker_Random_Duo_AVX512_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx512\\avx512_vmovntdq\\Random_Duo_AVX512_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 10 with AVX512_VMOVNTDQ Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Precise_AVX512_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx512\\avx512_vmovntdq\\Seq_Precise_AVX512_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 11 with AVX512_VMOVNTDQ Opcode
+    {
+        AppName: IntelligentMemoryChecker_Seq_Walking_One_AVX512_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx512\\avx512_vmovntdq\\Seq_Walking_One_AVX512_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 12 with AVX512_VMOVNTDQ Opcode
+    {
+        AppName: IntelligentMemoryChecker_LFSR_Data_Harasser_AVX512_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx512\\avx512_vmovntdq\\LFSR_Data_Harasser_AVX512_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }
+
+    # Test 13 with AVX512_VMOVNTDQ Opcode
+    {
+        AppName: IntelligentMemoryChecker_Stuck_At_AVX512_VMOVNTDQ
+        OS: Windows
+        Weight: 1
+        Path:C:\Galaxy\IMC_Tool
+        Command: runIMC.py
+        args: {
+            argname: [
+                "--Insight--",
+                "",
+                "-m",
+                "--blocksize",
+                "-l",
+                "--priority",
+                "-v",
+            ]
+            val: [
+                "C:\\imc\\w-intelligent-memory-checker\\ci_cd\\resources\\galaxy_workload_configuration\\GalaxyIMCInsight.hjson",
+                "C:\\Galaxy\\IMC_Tool\\customer_tests\\avx512\\avx512_vmovntdq\\Stuck_At_AVX512_VMOVNTDQ.xml",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ]
+            valtype: [
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val",
+                "val"
+            ]
+            weights: [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+            ]
+        }
+    }

@@ -1,0 +1,425 @@
+<!--
+/******************************************************************************
+* INTEL CONFIDENTIAL
+* Copyright 2017-2025 Intel Corporation.
+* This software and the related documents are Intel copyrighted materials, and your use of
+* them is governed by the express license under which they were provided to you ("License").
+* Unless the License provides otherwise, you may not use, modify, copy, publish, distribute,
+* disclose or transmit this software or the related documents without Intel's prior
+* written permission. This software and the related documents are provided as is, with no
+* express or implied warranties, other than those that are expressly stated in the License.
+*
+*-NDA Required
+*****************************************************************************/
+-->
+<IntelligentMemoryChecker>
+
+	<!--IMC flows queue configuration-->
+
+	<IMC_configuration>
+		<flow>address_harasser_legacy_flow_1</flow>
+		<flow>address_harasser_sse_movdqu_flow_1</flow>
+		<flow>address_harasser_avx_vmovdqu_flow_1</flow>
+		<flow>data_harasser_legacy_flow_1</flow>
+		<flow>data_harasser_sse_movdqu_flow_1</flow>
+		<flow>data_harasser_avx_vmovdqu_flow_1</flow>
+		<time_to_execute>10</time_to_execute>
+		<continue_on_fail>false</continue_on_fail>
+	</IMC_configuration>
+
+	<!--Flows configuration-->
+
+	<address_harasser_legacy_flow_1>
+		<flow_type>ADDRESS_HARASSER</flow_type>
+		<iterations>5</iterations>
+		<algorithm>fast_random_address_algorithm</algorithm>
+		<opcode>LEGACY</opcode>
+		<continue_on_fail>false</continue_on_fail>
+		<bypass_write_phase>false</bypass_write_phase>
+		<bypass_read_phase>false</bypass_read_phase>
+		<write_once>false</write_once>
+		<alignment>8</alignment>
+		<memory_block>memory_block_1</memory_block>
+	</address_harasser_legacy_flow_1>
+
+	<address_harasser_legacy_flow_2>
+		<flow_type>ADDRESS_HARASSER</flow_type>
+		<iterations>5</iterations>
+		<algorithm>set_associative_address_algorithm</algorithm>
+		<opcode>LEGACY</opcode>
+		<continue_on_fail>false</continue_on_fail>
+		<bypass_write_phase>false</bypass_write_phase>
+		<bypass_read_phase>false</bypass_read_phase>
+		<write_once>false</write_once>
+		<alignment>8</alignment>
+		<memory_block>memory_block_2</memory_block>
+		<memory_block>memory_block_3</memory_block>
+	</address_harasser_legacy_flow_2>
+
+	<address_harasser_legacy_flow_3>
+		<flow_type>ADDRESS_HARASSER</flow_type>
+		<iterations>5</iterations>
+		<algorithm>walking_zero_address_algorithm</algorithm>
+		<opcode>LEGACY</opcode>
+		<continue_on_fail>false</continue_on_fail>
+		<bypass_write_phase>false</bypass_write_phase>
+		<bypass_read_phase>false</bypass_read_phase>
+		<write_once>false</write_once>
+		<alignment>8</alignment>
+		<memory_block>memory_block_4</memory_block>
+		<memory_block>memory_block_5</memory_block>
+		<memory_block>memory_block_6</memory_block>
+	</address_harasser_legacy_flow_3>
+
+	<address_harasser_sse_movdqu_flow_1>
+		<flow_type>ADDRESS_HARASSER</flow_type>
+		<iterations>5</iterations>
+		<algorithm>lfsr_address_algorithm</algorithm>
+		<opcode>LEGACY</opcode>
+		<continue_on_fail>false</continue_on_fail>
+		<bypass_write_phase>false</bypass_write_phase>
+		<bypass_read_phase>false</bypass_read_phase>
+		<write_once>false</write_once>
+		<alignment>8</alignment>
+		<memory_block>memory_block_7</memory_block>
+	</address_harasser_sse_movdqu_flow_1>
+
+	<address_harasser_sse_movdqu_flow_2>
+		<flow_type>ADDRESS_HARASSER</flow_type>
+		<iterations>5</iterations>
+		<algorithm>increment_address_algorithm</algorithm>
+		<opcode>LEGACY</opcode>
+		<continue_on_fail>false</continue_on_fail>
+		<alignment>8</alignment>
+		<memory_block>memory_block_8</memory_block>
+		<memory_block>memory_block_9</memory_block>
+	</address_harasser_sse_movdqu_flow_2>
+
+	<address_harasser_avx_vmovdqu_flow_1>
+		<flow_type>ADDRESS_HARASSER</flow_type>
+		<iterations>5</iterations>
+		<algorithm>pivot_address_algorithm</algorithm>
+		<opcode>LEGACY</opcode>
+		<continue_on_fail>false</continue_on_fail>
+		<bypass_write_phase>false</bypass_write_phase>
+		<bypass_read_phase>false</bypass_read_phase>
+		<write_once>false</write_once>
+		<alignment>8</alignment>
+		<memory_block>memory_block_10</memory_block>
+	</address_harasser_avx_vmovdqu_flow_1>
+
+	<address_harasser_avx_vmovdqu_flow_2>
+		<flow_type>ADDRESS_HARASSER</flow_type>
+		<iterations>5</iterations>
+		<algorithm>walking_one_address_algorithm</algorithm>
+		<opcode>LEGACY</opcode>
+		<continue_on_fail>false</continue_on_fail>
+		<bypass_write_phase>false</bypass_write_phase>
+		<bypass_read_phase>false</bypass_read_phase>
+		<write_once>false</write_once>
+		<alignment>8</alignment>
+		<memory_block>memory_block_11</memory_block>
+		<memory_block>memory_block_12</memory_block>
+	</address_harasser_avx_vmovdqu_flow_2>
+
+	<data_harasser_legacy_flow_1>
+		<flow_type>DATA_HARASSER</flow_type>
+		<iterations>5</iterations>
+		<algorithm>byte_add_data_algorithm</algorithm>
+		<opcode>LEGACY</opcode>
+		<continue_on_fail>false</continue_on_fail>
+		<bypass_write_phase>false</bypass_write_phase>
+		<bypass_read_phase>false</bypass_read_phase>
+		<write_once>false</write_once>
+		<memory_block>memory_block_13</memory_block>
+	</data_harasser_legacy_flow_1>
+
+	<data_harasser_legacy_flow_2>
+		<flow_type>DATA_HARASSER</flow_type>
+		<iterations>5</iterations>
+		<algorithm>lfsr_data_algorithm</algorithm>
+		<opcode>LEGACY</opcode>
+		<continue_on_fail>false</continue_on_fail>
+		<bypass_write_phase>false</bypass_write_phase>
+		<bypass_read_phase>false</bypass_read_phase>
+		<write_once>false</write_once>
+		<memory_block>memory_block_14</memory_block>
+		<memory_block>memory_block_15</memory_block>
+	</data_harasser_legacy_flow_2>
+
+	<data_harasser_legacy_flow_3>
+		<flow_type>DATA_HARASSER</flow_type>
+		<iterations>5</iterations>
+		<algorithm>xtalk_data_algorithm</algorithm>
+		<opcode>LEGACY</opcode>
+		<continue_on_fail>false</continue_on_fail>
+		<bypass_write_phase>false</bypass_write_phase>
+		<bypass_read_phase>false</bypass_read_phase>
+		<write_once>false</write_once>
+		<memory_block>memory_block_16</memory_block>
+		<memory_block>memory_block_17</memory_block>
+		<memory_block>memory_block_18</memory_block>
+	</data_harasser_legacy_flow_3>
+
+	<data_harasser_sse_movdqu_flow_1>
+		<flow_type>DATA_HARASSER</flow_type>
+		<iterations>5</iterations>
+		<algorithm>constant_data_algorithm</algorithm>
+		<opcode>SSE_MOVDQU</opcode>
+		<continue_on_fail>false</continue_on_fail>
+		<bypass_write_phase>false</bypass_write_phase>
+		<bypass_read_phase>false</bypass_read_phase>
+		<write_once>false</write_once>
+		<memory_block>memory_block_19</memory_block>
+	</data_harasser_sse_movdqu_flow_1>
+
+	<data_harasser_sse_movdqu_flow_2>
+		<flow_type>DATA_HARASSER</flow_type>
+		<iterations>5</iterations>
+		<algorithm>shifting_data_algorithm</algorithm>
+		<opcode>SSE_MOVDQU</opcode>
+		<continue_on_fail>false</continue_on_fail>
+		<bypass_write_phase>false</bypass_write_phase>
+		<bypass_read_phase>false</bypass_read_phase>
+		<write_once>false</write_once>
+		<memory_block>memory_block_20</memory_block>
+		<memory_block>memory_block_21</memory_block>
+	</data_harasser_sse_movdqu_flow_2>
+
+	<data_harasser_avx_vmovdqu_flow_1>
+		<flow_type>DATA_HARASSER</flow_type>
+		<iterations>5</iterations>
+		<algorithm>fast_random_data_algorithm</algorithm>
+		<opcode>AVX_VMOVDQU</opcode>
+		<continue_on_fail>false</continue_on_fail>
+		<bypass_write_phase>false</bypass_write_phase>
+		<bypass_read_phase>false</bypass_read_phase>
+		<write_once>false</write_once>
+		<memory_block>memory_block_22</memory_block>
+	</data_harasser_avx_vmovdqu_flow_1>
+
+	<data_harasser_avx_vmovdqu_flow_2>
+		<flow_type>DATA_HARASSER</flow_type>
+		<iterations>5</iterations>
+		<algorithm>increment_data_algorithm</algorithm>
+		<opcode>AVX_VMOVDQU</opcode>
+		<continue_on_fail>false</continue_on_fail>
+		<bypass_write_phase>false</bypass_write_phase>
+		<bypass_read_phase>false</bypass_read_phase>
+		<write_once>false</write_once>
+		<memory_block>memory_block_23</memory_block>
+		<memory_block>memory_block_24</memory_block>
+	</data_harasser_avx_vmovdqu_flow_2>
+
+	<!--Algorithms configuration-->
+
+	<byte_add_data_algorithm>
+		<algorithm_type>BYTE_ADD</algorithm_type>
+		<pattern_count>20</pattern_count>
+		<seed>0x123456789abcdef0</seed>
+		<number_bytes_to_repeat>8</number_bytes_to_repeat>
+	</byte_add_data_algorithm>
+
+	<constant_data_algorithm>
+		<algorithm_type>CONSTANT</algorithm_type>
+		<pattern_count>20</pattern_count>
+		<constant_pattern>0x5555aaaa5555aaaa</constant_pattern>
+	</constant_data_algorithm>
+
+	<fast_random_data_algorithm>
+		<algorithm_type>FAST_RANDOM</algorithm_type>
+		<lower_limit_pattern>1</lower_limit_pattern>
+		<upper_limit_pattern>1024</upper_limit_pattern>
+		<pattern_count>20</pattern_count>
+		<seed>0x123456789abcdef0</seed>
+	</fast_random_data_algorithm>
+
+	<fast_random_address_algorithm>
+		<algorithm_type>FAST_RANDOM</algorithm_type>
+		<pattern_count>20</pattern_count>
+		<seed>0x123456789abcdef0</seed>
+	</fast_random_address_algorithm>
+
+	<lfsr_data_algorithm>
+		<algorithm_type>LFSR</algorithm_type>
+		<lower_limit_pattern>1</lower_limit_pattern>
+		<upper_limit_pattern>1024</upper_limit_pattern>
+		<pattern_count>20</pattern_count>
+		<seed>0x123456789abcdef0</seed>
+	</lfsr_data_algorithm>
+
+	<lfsr_address_algorithm>
+		<algorithm_type>LFSR</algorithm_type>
+		<pattern_count>20</pattern_count>
+		<seed>0x123456789abcdef0</seed>
+	</lfsr_address_algorithm>
+
+	<pivot_address_algorithm>
+		<algorithm_type>PIVOT</algorithm_type>
+	</pivot_address_algorithm>
+
+	<set_associative_address_algorithm>
+		<algorithm_type>SET_ASSOCIATIVE</algorithm_type>
+		<set_stride>4096</set_stride>
+		<way_stride>8192</way_stride>
+		<blocks_per_set>16</blocks_per_set>
+	</set_associative_address_algorithm>
+
+	<shifting_data_algorithm>
+		<algorithm_type>SHIFTING</algorithm_type>
+		<pattern_count>20</pattern_count>
+		<seed>0x123456789abcdef0</seed>
+	</shifting_data_algorithm>
+
+	<increment_address_algorithm>
+		<algorithm_type>INCREMENT</algorithm_type>
+		<incrementor>8</incrementor>
+	</increment_address_algorithm>
+
+	<increment_data_algorithm>
+		<algorithm_type>INCREMENT</algorithm_type>
+		<lower_limit_pattern>1</lower_limit_pattern>
+		<upper_limit_pattern>1024</upper_limit_pattern>
+		<pattern_count>20</pattern_count>
+		<incrementor>32</incrementor>
+	</increment_data_algorithm>
+
+	<walking_one_address_algorithm>
+		<algorithm_type>WALKING_ONE</algorithm_type>
+	</walking_one_address_algorithm>
+
+	<walking_zero_address_algorithm>
+		<algorithm_type>WALKING_ZERO</algorithm_type>
+	</walking_zero_address_algorithm>
+
+	<xtalk_data_algorithm>
+		<algorithm_type>XTALK</algorithm_type>
+		<pattern_count>20</pattern_count>
+		<seed>0x123456789abcdef0</seed>
+		<number_cache_lines>4</number_cache_lines>
+		<secondary>true</secondary>
+	</xtalk_data_algorithm>
+
+	<!--Memory blocks configuration-->
+
+	<memory_block_1>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_1>
+
+	<memory_block_2>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_2>
+
+	<memory_block_3>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_3>
+
+	<memory_block_4>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_4>
+
+	<memory_block_5>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_5>
+
+	<memory_block_6>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_6>
+
+	<memory_block_7>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_7>
+
+	<memory_block_8>
+			<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_8>
+
+	<memory_block_9>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_9>
+
+	<memory_block_10>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_10>
+
+	<memory_block_11>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_11>
+
+	<memory_block_12>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_12>
+
+	<memory_block_13>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_13>
+
+	<memory_block_14>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_14>
+
+	<memory_block_15>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_15>
+
+	<memory_block_16>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_16>
+
+	<memory_block_17>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_17>
+
+	<memory_block_18>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_18>
+
+	<memory_block_19>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_19>
+
+	<memory_block_20>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_20>
+
+	<memory_block_21>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_21>
+
+	<memory_block_22>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_22>
+
+	<memory_block_23>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_23>
+
+	<memory_block_24>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_24>
+
+</IntelligentMemoryChecker>

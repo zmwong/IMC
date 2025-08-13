@@ -1,0 +1,73 @@
+<!--
+/******************************************************************************
+* INTEL CONFIDENTIAL
+* Copyright 2017-2025 Intel Corporation.
+* This software and the related documents are Intel copyrighted materials, and your use of
+* them is governed by the express license under which they were provided to you ("License").
+* Unless the License provides otherwise, you may not use, modify, copy, publish, distribute,
+* disclose or transmit this software or the related documents without Intel's prior
+* written permission. This software and the related documents are provided as is, with no
+* express or implied warranties, other than those that are expressly stated in the License.
+*
+*-NDA Required
+*****************************************************************************/
+-->
+
+<!-- <ExpectedValue>OK</ExpectedValue> -->
+
+<IntelligentMemoryChecker>
+
+	<!--IMC flows queue configuration-->
+	<IMC_configuration>
+		<flow>burster_flow_1</flow>
+		<flow>burster_flow_1_invert</flow>
+		<iterations>30</iterations>
+	</IMC_configuration>
+
+	<!--Flows configuration-->
+	<burster_flow_1>
+		<flow_type>BURSTER</flow_type>
+		<data_bursts>1</data_bursts>
+		<address_algorithm>address_algorithm_burst</address_algorithm>
+		<data_algorithm>constant_data_algorithm1</data_algorithm>
+		<opcode>AVX512_VMOVDQU</opcode>
+		<memory_block>memory_block_1</memory_block>
+	</burster_flow_1>
+
+	<burster_flow_1_invert>
+		<flow_type>BURSTER</flow_type>
+		<data_bursts>1</data_bursts>
+		<address_algorithm>address_algorithm_burst2</address_algorithm>
+		<data_algorithm>constant_data_algorithm2</data_algorithm>
+		<opcode>AVX512_VMOVDQU</opcode>
+		<memory_block>memory_block_1</memory_block>
+	</burster_flow_1_invert>
+
+	<!--Algorithms configuration-->
+
+	<constant_data_algorithm1>
+		<algorithm_type>CONSTANT</algorithm_type>
+		<constant_pattern>0x5555aaaa5555aaaa</constant_pattern>
+	</constant_data_algorithm1>
+
+	<constant_data_algorithm2>
+		<algorithm_type>CONSTANT</algorithm_type>
+		<constant_pattern>0xaaaa5555aaaa5555</constant_pattern>
+	</constant_data_algorithm2>
+
+	<address_algorithm_burst>
+		<algorithm_type>INCREMENT</algorithm_type>
+		<incrementor>64</incrementor>
+	</address_algorithm_burst>
+
+	<address_algorithm_burst2>
+		<algorithm_type>INCREMENT</algorithm_type>
+		<incrementor>64</incrementor>
+	</address_algorithm_burst2>
+
+	<memory_block_1>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_1>
+
+</IntelligentMemoryChecker>
