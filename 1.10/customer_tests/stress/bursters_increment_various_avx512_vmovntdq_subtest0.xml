@@ -1,0 +1,185 @@
+<!--
+/******************************************************************************
+* INTEL CONFIDENTIAL
+* Copyright 2017-2025 Intel Corporation.
+* This software and the related documents are Intel copyrighted materials, and your use of
+* them is governed by the express license under which they were provided to you ("License").
+* Unless the License provides otherwise, you may not use, modify, copy, publish, distribute,
+* disclose or transmit this software or the related documents without Intel's prior
+* written permission. This software and the related documents are provided as is, with no
+* express or implied warranties, other than those that are expressly stated in the License.
+*
+*-NDA Required
+*****************************************************************************/
+-->
+<IntelligentMemoryChecker>
+
+	<!--IMC flows queue configuration-->
+
+	<IMC_configuration>
+		<flow>burster_flow_1</flow>
+		<flow>burster_flow_2</flow>
+		<flow>burster_flow_3</flow>
+		<flow>burster_flow_4</flow>
+		<flow>burster_flow_5</flow>
+		<flow>burster_flow_6</flow>
+		<flow>burster_flow_7</flow>
+		<time_to_execute>10</time_to_execute>
+		<time_unit>minutes</time_unit>
+	</IMC_configuration>
+
+<!--
+	7 Burster flows to replicate the subtest0 in memRunner
+-->
+
+	<burster_flow_1>
+		<flow_type>BURSTER</flow_type>
+		<data_bursts>16</data_bursts>
+		<iterations>100</iterations>
+		<address_algorithm>increment_address_algorithm_burst_1</address_algorithm>
+		<data_algorithm>decrement_data_algorithm_burst_1</data_algorithm>
+		<opcode>AVX512_VMOVNTDQ</opcode>
+		<alignment>64</alignment>
+	</burster_flow_1>
+
+	<burster_flow_2>
+		<flow_type>BURSTER</flow_type>
+		<data_bursts>16</data_bursts>
+		<iterations>100</iterations>
+		<address_algorithm>increment_address_algorithm_burst_2</address_algorithm>
+		<data_algorithm>increment_data_algorithm_burst_2</data_algorithm>
+		<opcode>AVX512_VMOVNTDQ</opcode>
+		<alignment>64</alignment>
+	</burster_flow_2>
+
+	<burster_flow_3>
+		<flow_type>BURSTER</flow_type>
+		<data_bursts>16</data_bursts>
+		<iterations>100</iterations>
+		<address_algorithm>increment_address_algorithm_burst_3</address_algorithm>
+		<data_algorithm>fast_random_data_algorithm_burst_3</data_algorithm>
+		<opcode>AVX512_VMOVNTDQ</opcode>
+		<alignment>64</alignment>
+	</burster_flow_3>
+
+	<burster_flow_4>
+		<flow_type>BURSTER</flow_type>
+		<data_bursts>16</data_bursts>
+		<iterations>100</iterations>
+		<address_algorithm>increment_address_algorithm_burst_4</address_algorithm>
+		<data_algorithm>negator_data_algorithm_burst_4</data_algorithm>
+		<opcode>AVX512_VMOVNTDQ</opcode>
+		<alignment>64</alignment>
+	</burster_flow_4>
+
+	<burster_flow_5>
+		<flow_type>BURSTER</flow_type>
+		<data_bursts>16</data_bursts>
+		<iterations>100</iterations>
+		<address_algorithm>increment_address_algorithm_burst_5</address_algorithm>
+		<data_algorithm>walking_one_data_algorithm_burst_5</data_algorithm>
+		<opcode>AVX512_VMOVNTDQ</opcode>
+		<alignment>64</alignment>
+	</burster_flow_5>
+
+	<burster_flow_6>
+		<flow_type>BURSTER</flow_type>
+		<data_bursts>16</data_bursts>
+		<iterations>100</iterations>
+		<address_algorithm>increment_address_algorithm_burst_6</address_algorithm>
+		<data_algorithm>negator_data_algorithm_burst_6</data_algorithm>
+		<opcode>AVX512_VMOVNTDQ</opcode>
+		<alignment>64</alignment>
+	</burster_flow_6>
+
+	<burster_flow_7>
+		<flow_type>BURSTER</flow_type>
+		<data_bursts>16</data_bursts>
+		<iterations>100</iterations>
+		<address_algorithm>increment_address_algorithm_burst_7</address_algorithm>
+		<data_algorithm>walking_zero_data_algorithm_burst_7</data_algorithm>
+		<opcode>AVX512_VMOVNTDQ</opcode>
+		<alignment>64</alignment>
+	</burster_flow_7>
+
+
+<!--
+	Algorithm configurations for burster flows
+-->
+
+	<decrement_data_algorithm_burst_1>
+		<algorithm_type>DECREMENT</algorithm_type>
+		<decrementor>1</decrementor>
+	</decrement_data_algorithm_burst_1>
+
+	<increment_data_algorithm_burst_2>
+		<algorithm_type>INCREMENT</algorithm_type>
+		<incrementor>1</incrementor>
+	</increment_data_algorithm_burst_2>
+
+	<fast_random_data_algorithm_burst_3>
+		<algorithm_type>FAST_RANDOM</algorithm_type>
+	</fast_random_data_algorithm_burst_3>
+
+	<negator_data_algorithm_burst_4>
+		<algorithm_type>NEGATOR</algorithm_type>
+	</negator_data_algorithm_burst_4>
+
+	<walking_one_data_algorithm_burst_5>
+		<algorithm_type>WALKING_ONE</algorithm_type>
+	</walking_one_data_algorithm_burst_5>
+
+	<negator_data_algorithm_burst_6>
+		<algorithm_type>NEGATOR</algorithm_type>
+	</negator_data_algorithm_burst_6>
+
+	<walking_zero_data_algorithm_burst_7>
+		<algorithm_type>WALKING_ONE</algorithm_type>
+	</walking_zero_data_algorithm_burst_7>
+
+<!--
+	Increment addressing algorithms used for burst flows
+ -->
+
+	<increment_address_algorithm_burst_1>
+		<algorithm_type>INCREMENT</algorithm_type>
+		<incrementor>1024</incrementor>
+	</increment_address_algorithm_burst_1>
+
+	<increment_address_algorithm_burst_2>
+		<algorithm_type>INCREMENT</algorithm_type>
+		<incrementor>1024</incrementor>
+	</increment_address_algorithm_burst_2>
+
+	<increment_address_algorithm_burst_3>
+		<algorithm_type>INCREMENT</algorithm_type>
+		<incrementor>1024</incrementor>
+	</increment_address_algorithm_burst_3>
+
+	<increment_address_algorithm_burst_4>
+		<algorithm_type>INCREMENT</algorithm_type>
+		<incrementor>1024</incrementor>
+	</increment_address_algorithm_burst_4>
+
+	<increment_address_algorithm_burst_5>
+		<algorithm_type>INCREMENT</algorithm_type>
+		<incrementor>1024</incrementor>
+	</increment_address_algorithm_burst_5>
+
+	<increment_address_algorithm_burst_6>
+		<algorithm_type>INCREMENT</algorithm_type>
+		<incrementor>1024</incrementor>
+	</increment_address_algorithm_burst_6>
+
+	<increment_address_algorithm_burst_7>
+		<algorithm_type>INCREMENT</algorithm_type>
+		<incrementor>1024</incrementor>
+	</increment_address_algorithm_burst_7>
+
+
+<!--
+	No memory blocks configuration due to this file meant to be used by Runner
+-->
+
+</IntelligentMemoryChecker>
+

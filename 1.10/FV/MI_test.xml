@@ -1,0 +1,153 @@
+<IntelligentMemoryChecker>
+    <IMC_configuration>
+        <flow>moving_inv_zeros_ones</flow>
+        <flow>moving_inv_8bit</flow>
+        <flow>moving_inv_random</flow>
+        <flow>moving_inv_64bit</flow>
+        <time_to_execute>600</time_to_execute>
+        <continue_on_fail>false</continue_on_fail>
+    </IMC_configuration>
+
+
+    <!-- Moving inversions, all zeros and all ones using pattern_list -->
+    <moving_inv_zeros_ones>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>5</iterations>
+        <algorithm>pattern_list_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>false</bypass_write_phase>
+        <bypass_read_phase>false</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_1</memory_block>
+    </moving_inv_zeros_ones>
+
+
+
+    <!-- Moving inversions, all zeros -->
+    <moving_inv_zeros>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>5</iterations>
+        <algorithm>constant_zero_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>false</bypass_write_phase>
+        <bypass_read_phase>false</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_1</memory_block>
+    </moving_inv_zeros>
+
+    <!-- Moving inversions, all ones (0xFFFFFFFFFFFFFFFF) -->
+    <moving_inv_ones>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>5</iterations>
+        <algorithm>constant_ones_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>false</bypass_write_phase>
+        <bypass_read_phase>false</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_2</memory_block>
+    </moving_inv_ones>
+
+    <!-- Moving inversions, 8-bit pattern (0x00 to 0xFF and inverse) -->
+    <moving_inv_8bit>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>5</iterations>
+        <algorithm>increment_8bit_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>false</bypass_write_phase>
+        <bypass_read_phase>false</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_3</memory_block>
+    </moving_inv_8bit>
+
+    <!-- Moving inversions, random pattern and its inverse -->
+    <moving_inv_random>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>5</iterations>
+        <algorithm>fast_random_data_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>false</bypass_write_phase>
+        <bypass_read_phase>false</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_4</memory_block>
+    </moving_inv_random>
+
+    <!-- Moving inversions, 64-bit shifting pattern -->
+    <moving_inv_64bit>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>5</iterations>
+        <algorithm>walking_one_data_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>false</bypass_write_phase>
+        <bypass_read_phase>false</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_5</memory_block>
+    </moving_inv_64bit>
+
+    <!-- Algorithms -->
+    <pattern_list_algorithm>
+        <algorithm_type>PATTERN_LIST</algorithm_type>
+        <pattern_list>0x0000000000000000</pattern_list>
+        <pattern_list>0xffffffffffffffff</pattern_list>
+    </pattern_list_algorithm>
+
+    <constant_zero_algorithm>
+        <algorithm_type>CONSTANT</algorithm_type>
+        <pattern_count>1</pattern_count>
+        <constant_pattern>0x0000000000000000</constant_pattern>
+    </constant_zero_algorithm>
+
+    <constant_ones_algorithm>
+        <algorithm_type>CONSTANT</algorithm_type>
+        <pattern_count>1</pattern_count>
+        <constant_pattern>0xFFFFFFFFFFFFFFFF</constant_pattern>
+    </constant_ones_algorithm>
+
+    <increment_8bit_algorithm>
+        <algorithm_type>INCREMENT</algorithm_type>
+        <lower_limit_pattern>1</lower_limit_pattern>
+        <upper_limit_pattern>255</upper_limit_pattern>
+        <pattern_count>256</pattern_count>
+        <incrementor>1</incrementor>
+    </increment_8bit_algorithm>
+
+    <fast_random_data_algorithm>
+        <algorithm_type>FAST_RANDOM</algorithm_type>
+        <lower_limit_pattern>1</lower_limit_pattern>
+        <upper_limit_pattern>1024</upper_limit_pattern>
+        <pattern_count>20</pattern_count>
+        <seed>0x123456789abcdef0</seed>
+    </fast_random_data_algorithm>
+
+    <walking_one_data_algorithm>
+        <algorithm_type>WALKING_ONE</algorithm_type>
+        <pattern_count>64</pattern_count>
+    </walking_one_data_algorithm>
+
+    <!-- Memory blocks -->
+    <memory_block_1>
+        <memory_block_type>MALLOC</memory_block_type>
+        <size_in_bytes>4294967296</size_in_bytes>
+    </memory_block_1>
+    <memory_block_2>
+        <memory_block_type>MALLOC</memory_block_type>
+        <size_in_bytes>4294967296</size_in_bytes>
+    </memory_block_2>
+    <memory_block_3>
+        <memory_block_type>MALLOC</memory_block_type>
+        <size_in_bytes>4294967296</size_in_bytes>
+    </memory_block_3>
+    <memory_block_4>
+        <memory_block_type>MALLOC</memory_block_type>
+        <size_in_bytes>4294967296</size_in_bytes>
+    </memory_block_4>
+    <memory_block_5>
+        <memory_block_type>MALLOC</memory_block_type>
+        <size_in_bytes>4294967296</size_in_bytes>
+    </memory_block_5>
+</IntelligentMemoryChecker>

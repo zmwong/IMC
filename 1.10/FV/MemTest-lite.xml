@@ -1,0 +1,250 @@
+<IntelligentMemoryChecker>
+    <IMC_configuration>
+        <!-- <flow>null_test</flow> -->
+        <flow>address_test_walking_ones</flow>
+        <flow>address_test_own_address</flow>
+        <flow>moving_inv_zeros_ones</flow>
+        <flow>moving_inv_8bit</flow>
+        <flow>moving_inv_random</flow>
+        <flow>block_move_80</flow>
+        <flow>moving_inv_64bit</flow>
+        <flow>modulo_20_random</flow>
+        <time_to_execute>1800</time_to_execute>
+        <continue_on_fail>false</continue_on_fail>
+    </IMC_configuration>
+
+    <!-- Null Test - Simple busy loop -->
+    <null_test>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>1</iterations>
+        <algorithm>null_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>true</bypass_write_phase>
+        <bypass_read_phase>true</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_1</memory_block>
+    </null_test>
+
+    <!-- Address test, walking ones -->
+    <address_test_walking_ones>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>1</iterations>
+        <algorithm>walking_ones_address_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>false</bypass_write_phase>
+        <bypass_read_phase>false</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_2</memory_block>
+    </address_test_walking_ones>
+
+    <!-- Address test, own address -->
+    <address_test_own_address>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>1</iterations>
+        <algorithm>own_address_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>false</bypass_write_phase>
+        <bypass_read_phase>false</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_3</memory_block>
+    </address_test_own_address>
+
+    <!-- Moving inversions, all ones and zeros -->
+    <moving_inv_zeros_ones>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>1</iterations>
+        <algorithm>pattern_list_zeros_ones_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>false</bypass_write_phase>
+        <bypass_read_phase>false</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_4</memory_block>
+    </moving_inv_zeros_ones>
+
+    <!-- Moving inversions, 8 bit pattern -->
+    <moving_inv_8bit>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>1</iterations>
+        <algorithm>increment_8bit_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>false</bypass_write_phase>
+        <bypass_read_phase>false</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_5</memory_block>
+    </moving_inv_8bit>
+
+    <!-- Moving inversions, random pattern -->
+    <moving_inv_random>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>1</iterations>
+        <algorithm>fast_random_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>false</bypass_write_phase>
+        <bypass_read_phase>false</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_6</memory_block>
+    </moving_inv_random>
+
+    <!-- Block move, 80 moves -->
+    <block_move_80>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>1</iterations>
+        <algorithm>block_move_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>false</bypass_write_phase>
+        <bypass_read_phase>false</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_7</memory_block>
+    </block_move_80>
+
+    <!-- Moving inversions, 64 bit pattern -->
+    <moving_inv_64bit>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>1</iterations>
+        <algorithm>walking_one_64bit_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>false</bypass_write_phase>
+        <bypass_read_phase>false</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_8</memory_block>
+    </moving_inv_64bit>
+
+    <!-- Modulo 20, Random pattern -->
+    <modulo_20_random>
+        <flow_type>DATA_HARASSER</flow_type>
+        <iterations>1</iterations>
+        <algorithm>modulo_20_algorithm</algorithm>
+        <opcode>LEGACY</opcode>
+        <continue_on_fail>false</continue_on_fail>
+        <bypass_write_phase>false</bypass_write_phase>
+        <bypass_read_phase>false</bypass_read_phase>
+        <write_once>false</write_once>
+        <memory_block>memory_block_9</memory_block>
+    </modulo_20_random>
+
+    <!-- Algorithm Definitions -->
+    
+    <!-- Null algorithm - minimal operations -->
+    <null_algorithm>
+        <algorithm_type>PATTERN_LIST</algorithm_type>
+        <pattern_list>0x0000000000000000</pattern_list>
+    </null_algorithm>
+
+    <!-- Walking ones for address test -->
+    <walking_ones_address_algorithm>
+        <algorithm_type>WALKING_ONE</algorithm_type>
+        <pattern_count>64</pattern_count>
+    </walking_ones_address_algorithm>
+
+    <!-- Own address pattern (simulated with increment) -->
+    <own_address_algorithm>
+        <algorithm_type>INCREMENT</algorithm_type>
+        <lower_limit_pattern>1</lower_limit_pattern>
+        <upper_limit_pattern>1048576</upper_limit_pattern>
+        <pattern_count>1048576</pattern_count>
+        <incrementor>8</incrementor>
+    </own_address_algorithm>
+
+    <!-- Pattern list for zeros and ones -->
+    <pattern_list_zeros_ones_algorithm>
+        <algorithm_type>PATTERN_LIST</algorithm_type>
+        <pattern_list>0x0000000000000000</pattern_list>
+        <pattern_list>0xFFFFFFFFFFFFFFFF</pattern_list>
+    </pattern_list_zeros_ones_algorithm>
+
+    <!-- 8-bit increment pattern -->
+    <increment_8bit_algorithm>
+        <algorithm_type>INCREMENT</algorithm_type>
+        <lower_limit_pattern>1</lower_limit_pattern>
+        <upper_limit_pattern>255</upper_limit_pattern>
+        <pattern_count>256</pattern_count>
+        <incrementor>1</incrementor>
+    </increment_8bit_algorithm>
+
+    <!-- Fast random algorithm -->
+    <fast_random_algorithm>
+        <algorithm_type>FAST_RANDOM</algorithm_type>
+        <lower_limit_pattern>1</lower_limit_pattern>
+        <upper_limit_pattern>1024</upper_limit_pattern>
+        <pattern_count>50</pattern_count>
+        <seed>0x123456789ABCDEF0</seed>
+    </fast_random_algorithm>
+
+    <!-- Block move pattern (using constant for initialization) -->
+    <block_move_algorithm>
+        <algorithm_type>PATTERN_LIST</algorithm_type>
+        <pattern_list>0xAAAAAAAAAAAAAAAA</pattern_list>
+        <pattern_list>0x5555555555555555</pattern_list>
+        <pattern_list>0xCCCCCCCCCCCCCCCC</pattern_list>
+        <pattern_list>0x3333333333333333</pattern_list>
+    </block_move_algorithm>
+
+    <!-- Walking one for 64-bit pattern -->
+    <walking_one_64bit_algorithm>
+        <algorithm_type>WALKING_ONE</algorithm_type>
+        <pattern_count>64</pattern_count>
+    </walking_one_64bit_algorithm>
+
+    <!-- Modulo 20 pattern using LFSR -->
+    <modulo_20_algorithm>
+        <algorithm_type>LFSR</algorithm_type>
+        <lower_limit_pattern>1</lower_limit_pattern>
+        <upper_limit_pattern>1048576</upper_limit_pattern>
+        <pattern_count>52428</pattern_count>
+        <seed>0x987654321FEDCBA0</seed>
+    </modulo_20_algorithm>
+
+    <!-- Memory Block Definitions -->
+    <memory_block_1>
+        <memory_block_type>MALLOC</memory_block_type>
+        <size_in_bytes>4096</size_in_bytes>
+    </memory_block_1>
+
+    <memory_block_2>
+        <memory_block_type>MALLOC</memory_block_type>
+        <size_in_bytes>4096</size_in_bytes>
+    </memory_block_2>
+
+    <memory_block_3>
+        <memory_block_type>MALLOC</memory_block_type>
+        <size_in_bytes>4096</size_in_bytes>
+    </memory_block_3>
+
+    <memory_block_4>
+        <memory_block_type>MALLOC</memory_block_type>
+        <size_in_bytes>4096</size_in_bytes>
+    </memory_block_4>
+
+    <memory_block_5>
+        <memory_block_type>MALLOC</memory_block_type>
+        <size_in_bytes>4096</size_in_bytes>
+    </memory_block_5>
+
+    <memory_block_6>
+        <memory_block_type>MALLOC</memory_block_type>
+        <size_in_bytes>4096</size_in_bytes>
+    </memory_block_6>
+
+    <memory_block_7>
+        <memory_block_type>MALLOC</memory_block_type>
+        <size_in_bytes>4096</size_in_bytes>
+    </memory_block_7>
+
+    <memory_block_8>
+        <memory_block_type>MALLOC</memory_block_type>
+        <size_in_bytes>4096</size_in_bytes>
+    </memory_block_8>
+
+    <memory_block_9>
+        <memory_block_type>MALLOC</memory_block_type>
+        <size_in_bytes>4096</size_in_bytes>
+    </memory_block_9>
+</IntelligentMemoryChecker>

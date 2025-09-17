@@ -1,0 +1,81 @@
+<!--
+/******************************************************************************
+* INTEL CONFIDENTIAL
+* Copyright 2017-2025 Intel Corporation.
+* This software and the related documents are Intel copyrighted materials, and your use of
+* them is governed by the express license under which they were provided to you ("License").
+* Unless the License provides otherwise, you may not use, modify, copy, publish, distribute,
+* disclose or transmit this software or the related documents without Intel's prior
+* written permission. This software and the related documents are provided as is, with no
+* express or implied warranties, other than those that are expressly stated in the License.
+*
+*-NDA Required
+*****************************************************************************/
+-->
+
+<!-- <ExpectedValue>OK</ExpectedValue> -->
+
+<IntelligentMemoryChecker>
+
+	<!--IMC flows queue configuration-->
+
+	<IMC_configuration>
+		<flow>data_harasser_legacy_flow_1</flow>
+		<flow>burster_flow_1</flow>
+		<iterations>1</iterations>
+	</IMC_configuration>
+
+	<!--Flows configuration-->
+	<burster_flow_1>
+		<flow_type>BURSTER</flow_type>
+		<iterations>50</iterations>
+		<data_bursts>16</data_bursts>
+		<address_algorithm>increment_address_algorithm_burst</address_algorithm>
+		<data_algorithm>byte_add_data_algorithm_burst</data_algorithm>
+		<opcode>AVX512_VMOVDQU</opcode>
+		<execute_iterations>1</execute_iterations>
+		<same_address>false</same_address>
+		<memory_block_group>memory_block_group_1</memory_block_group>
+	</burster_flow_1>
+
+
+	<data_harasser_legacy_flow_1>
+		<flow_type>DATA_HARASSER</flow_type>
+		<algorithm>byte_add_data_algorithm</algorithm>
+		<opcode>LEGACY</opcode>
+		<memory_block>memory_block_1</memory_block>
+	</data_harasser_legacy_flow_1>
+
+	<!--Algorithms configuration-->
+
+	<byte_add_data_algorithm_burst>
+		<algorithm_type>BYTE_ADD</algorithm_type>
+	</byte_add_data_algorithm_burst>
+
+	<increment_address_algorithm_burst>
+		<algorithm_type>LFSR</algorithm_type>
+		<pattern_count>10000000</pattern_count>
+		<seed>0x7fed7fed7fed7fed</seed>
+		<incrementor>1024</incrementor>
+	</increment_address_algorithm_burst>
+
+	<!--Algorithms configuration-->
+
+	<byte_add_data_algorithm>
+		<algorithm_type>BYTE_ADD</algorithm_type>
+	</byte_add_data_algorithm>
+
+	<!--Memory blocks configuration-->
+
+	<memory_block_group_1>
+		<memory_block_type>MALLOC</memory_block_type>
+		<overall_memory>0x384000</overall_memory>
+		<size_in_bytes>0x64000</size_in_bytes>
+	</memory_block_group_1>
+
+	<memory_block_1>
+		<memory_block_type>MALLOC</memory_block_type>
+		<size_in_bytes>4096</size_in_bytes>
+	</memory_block_1>
+
+</IntelligentMemoryChecker>

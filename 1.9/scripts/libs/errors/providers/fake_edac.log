@@ -1,0 +1,23 @@
+mc0: csrow0: CPU_SrcID#0_MC#0_Chan#0_DIMM#0: 212 Corrected Errors
+mc0:csrow0:CPU_SrcID#0_MC#0_Chan#0_DIMM#0:CE:212
+mc0: csrow0: CPU_SrcID#0_MC#0_Chan#1_DIMM#0: 316 Corrected Errors
+mc0:csrow0:CPU_SrcID#0_MC#0_Chan#1_DIMM#0:CE:316
+mc0:csrow0:CPU_SrcID#0_MC#0_Chan#2_DIMM#0:CE:0
+mc0:csrow1:CPU_SrcID#0_MC#0_Chan#0_DIMM#1:CE:0
+mc0: csrow0: CPU_SrcID#0_MC#0_Chan#1_DIMM#1: 6930 Corrected Errors
+mc0:csrow0:CPU_SrcID#0_MC#0_Chan#1_DIMM#1:CE:6930
+mc0:csrow1:CPU_SrcID#0_MC#0_Chan#2_DIMM#1:CE:0
+mcO:noinfo:all:UE:0
+mcO:noinfo:all:CE:0
+mc1:csrow0:CPU_SrcID#0_MC#1_Chan#0_DIMM#0:CE:0
+mc1:csrow0:CPU_SrcID#0_MC#1_Chan#1_DIMM#0:CE:0
+mc1:csrow0:CPU_SrcID#0_MC#1_Chan#2_DIMM#0:CE:0
+mc1:csrow1:CPU_SrcID#0_MC#1_Chan#0_DIMM#1:CE:0
+mc1:csrow1:CPU_SrcID#0_MC#1_Chan#1_DIMM#1:CE:0
+mc1:csrow1:CPU_SrcID#0_MC#1_Chan#2_DIMM#1:CE:0
+mc1:noinfo:all:UE:0
+mc1:noinfo:all:CE:0
+mc2:noinfo:all:UE:0
+mc2:noinfo:all:CE:0
+mc3:noinfo:all:UE:0
+mc3:noinfo:all:CE:0
